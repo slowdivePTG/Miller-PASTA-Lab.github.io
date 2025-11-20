@@ -1,0 +1,207 @@
+/* Miller PASTA Lab — Modern & elegant theme tied to logo palette
+   Light palette (from PASTA-logo.png):
+     - bg:   #F6EDD6 (pasta beige)
+     - text: #161615 (near-black)
+     - accent orange: #E95A2C
+     - accent yellow: #F7B500
+   Dark palette (from PASTA-logo-dark.png):
+     - bg:   #0E1D24 / #0D1F26 (blue-slate)
+     - text: #EAD8B5 (warm beige)
+*/
+
+:root {
+  --bg: #F6EDD6;
+  --text: #161615;
+  --muted: #4B4B48;
+  --accent: #E95A2C;
+  --accent-2: #F7B500;
+  --card: #FFFFFF;
+  --banner-overlay: rgba(246, 237, 214, 0.80);
+  --link: #E95A2C; /* match pasta orange */
+  --ring: rgba(233, 90, 44, .35);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Dark scheme (auto) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0D1F26;
+    --text: #EAD8B5;
+    --muted: #CDBF9B;
+    --accent: #FF7A3C;
+    --accent-2: #F2B500;
+    --card: #132A33;
+    --banner-overlay: rgba(13, 31, 38, .55);
+    --link: #FF7A3C; /* match pasta orange for dark */
+    --ring: rgba(255, 122, 60, .35);
+    --shadow: 0 16px 36px rgba(0,0,0,.45);
+  }
+}
+
+/* Manual override via toggle */
+html[data-theme='light'] {
+  --bg: #F6EDD6; --text: #161615; --muted: #4B4B48;
+  --accent: #E95A2C; --accent-2: #F7B500; --card: #FFFFFF;
+  --banner-overlay: rgba(246, 237, 214, 0.80); --link: #E95A2C; --ring: rgba(233, 90, 44, .35);
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+html[data-theme='dark'] {
+  --bg: #0D1F26; --text: #EAD8B5; --muted: #CDBF9B;
+  --accent: #FF7A3C; --accent-2: #F2B500; --card: #132A33;
+  --banner-overlay: rgba(13, 31, 38, .55); --link: #FF7A3C; --ring: rgba(255, 122, 60, .35);
+  --shadow: 0 16px 36px rgba(0,0,0,.45);
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Inter", "Source Sans 3", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+}
+
+/* Container with gutters + readable max width */
+.site-container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+main .site-container, .container.site-container { /* safety hook for all main containers */
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}
+
+/* Constrain long text (paragraphs) to a text measure ~70ch */
+.prose, main .container, main .site-container {
+  --prose-max: 72ch;
+}
+.prose, section > .prose { max-width: var(--prose-max); }
+
+/* Header / Banner */
+.site-header {
+  position: relative;
+  color: var(--text);
+  background: url('../img/PASTA-banner.png') center/cover no-repeat;
+}
+.site-header .overlay {
+  background: var(--banner-overlay);
+  padding-block: 20px 12px;
+}
+.main-nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand img { height: 44px; width: auto; }
+.brand-name { font-weight: 800; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+.subtitle { color: var(--muted); font-size: 0.95rem; }
+.links { display: flex; gap: 20px; flex-wrap: wrap; }
+.links a { color: var(--text); text-decoration: none; font-weight: 600; padding: 4px 2px; }
+.links a.active { color: var(--accent); }
+.theme-toggle {
+  border: 1px solid color-mix(in oklab, var(--muted), transparent 40%);
+  color: var(--text); background: transparent; border-radius: 999px;
+  padding: 8px 14px; cursor: pointer;
+}
+.theme-toggle:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+.hero { padding: 18px 0 28px 0; border-top: 1px solid color-mix(in oklab, var(--text), transparent 90%); }
+.hero h1 { font-size: clamp(1.8rem, 2.6vw, 2.4rem); margin: 6px 0 4px; }
+.hero .tagline { margin: 0; color: var(--muted); font-weight: 500; }
+
+/* Sections */
+main { padding-block: 26px 64px; }
+.section-title { font-size: clamp(1.4rem, 2vw, 1.75rem); margin: 18px 0; }
+
+/* Grids & Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  border: 1px solid color-mix(in oklab, var(--text), transparent 92%);
+}
+.card h3 { margin-top: 0; }
+.card .meta { color: var(--muted); font-size: 0.95rem; }
+.card a { color: var(--link); text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+
+/*.card h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+.card h3 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}*/
+
+/* Team */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+.member-card img {
+  width: 100%; height: 240px; object-fit: cover; border-radius: 12px; background: #ddd;
+}
+.member-card h3 { margin: 12px 0 6px; }
+.member-card .role { margin: 0; color: var(--muted); }
+.member-card .bio { margin-top: 8px; font-size: 0.96rem; }
+
+.links-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.links-row a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.links-row a:hover {
+  color: var(--accent-2);
+}
+.icon {
+  vertical-align: middle;
+}
+.ads-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+
+/* Utilities */
+.notice {
+  background: var(--card);
+  border-left: 6px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  max-width: var(--prose-max);
+}
+.breadcrumb { font-size: 0.95rem; color: var(--muted); margin-bottom: 12px; }
+
+footer {
+  background: transparent; color: var(--muted);
+  padding: 42px 0; border-top: 1px solid color-mix(in oklab, var(--text), transparent 90%);
+}
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.footer-grid .right { text-align: right; }
+
+/* Logo visibility — reinforced here (plus inline fallback in head.html) */
+.light-only { display: block; }
+.dark-only  { display: none; }
+@media (prefers-color-scheme: dark) {
+  .light-only { display: none; }
+  .dark-only  { display: block; }
+}
+html[data-theme='light'] .light-only { display: block; }
+html[data-theme='light'] .dark-only  { display: none; }
+html[data-theme='dark'] .light-only  { display: none; }
+html[data-theme='dark'] .dark-only   { display: block; }
+
+/* Improve default prose spacing for all pages */
+p { margin: 0 0 1rem 0; }
+h1, h2, h3, h4 { line-height: 1.25; }

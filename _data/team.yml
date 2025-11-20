@@ -1,0 +1,54 @@
+
+current:
+  - name: Adam A. Miller
+    role: Assistant Professor & PI
+    photo: adam-miller1.jpg
+    bio: Primary focus is understanding the different progenitor channels of stellar explosions. Actively working on multiple time-domain surveys including, ZTF, LS4, and LSST, while looking for ways to leverage recent advances in data science and artificial intelligence.
+    ads: https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0001-9515-478X&sort=date%20desc%2C%20bibcode%20desc&p_=0
+    github: https://github.com/adamamiller
+  - name: Chang Liu
+    role: PhD Candidate
+    photo: chang-liu.jpg
+    bio: Primary focus is understanding the physics of thermonuclear explosions in white dwarf stars. Uses early-time observations collected by surveys like ZTF and late-time observations from facilities like Keck to study double-detonation explosions. 
+  - name: Nabeel Rehemtulla
+    role: PhD Candidate
+    photo: nabeel-rehemtulla.jpg
+    bio: Primary focus is developing automated systems to discover young supernovae. Created BTSbot, and other related AI systems, which can automaticaly discover and classify supernovae in order to better understand the final stages of stellar evolution in massive stars. 
+  - name: Saarah Hall
+    role: PhD Candidate
+    photo: saarah-hall.png
+    bio: Primary focus is understaning the progenitors of calcium-rich transients, an enigmatic class of exploding stars with unclear origins. Observations focus on the study of late-time, mid-infrared observations collected by the James Webb Space Telescope (JWST). 
+  - name: Lindsey Kwok
+    role: Postdoctoral Fellow (NASA Hubble Fellow)
+    photo: lindsey-kwok.jpeg
+    bio: Primary focus is understanding white-dwarf supernovae with JWST mid-infrared spectroscopy, with a focus on extreme thermonuclear explosions. Has led mutliple studies comparing detailed explosion models with late-time mid-infrared spectra from JWST.      
+  - name: Ved Shah
+    role: PhD student
+    photo: ved-shah.jpg
+    bio: Primary focus is creating and developing photometric classification models that leverage artificial intelligence to discover explosive transients and variable stars. Has developed pipelines for ZTF, and is working on the discovery of high-redshift transients in LSST.
+  - name: Jason Hinkle
+    role: Postdoctoral Fellow (NASA Einstein Fellow)
+    photo: jason-hinkle.jpg
+    bio: Primary focus is understanding extreme accretion events associated with massive black holes in the nuclei of galaxies. Uses multi-wavelength observations spanning the X-rays to the infrared to link accretion physics and stellar death. 
+  - name: Elaine Bai
+    role: Undergraduate Researcher (Illinois Institute of Technology)
+    photo: elaine-bai.jpg
+    bio: Primary focus is studying the redshift completeness of galaxy redshift catalogs in the local Universe. Uses observations from ZTF to identify whether a galaxy's redshift was known prior to the supernova.
+
+former:
+  - name: Steve Schulze
+    role: Research Associate >> Faculty at Weizmann Institute
+    photo: steve-schulze.png
+    bio: Primary focus was understanding the explosion physics and host galaxies of super-luminous supernovae. Has discovered many extreme supernovae in ZTF observations, including the first known example of a Type Ien supernova.
+  - name: Anastasia Wei
+    role: Undergrad >> PhD student at UC Berkeley
+    photo: anastasia-wei.jpg
+    bio: Primary focus was understanding the local environments of supernovae within their host galaxies. Analyzed observations from PanSTARRS and the Hubble Space Telescope of ZTF supernovae. 
+  - name: Caitlin Witt
+    role: CIERA/Adler Fellow >> Faculty at Wake Forest University
+    photo: caitlin-witt.jpg
+    bio: Primary focus was supermassive black hole binaries (SMBHBs), and the low frequency gravitational waves they emit, which she studies via pulsar timing arrays. Uses optical light curves for search for SMBHBs.
+  - name: Sebastian Banaszak
+    role: CIERA REU >> PhD student at Vanderbilt University
+    photo: sebastian-banaszak.jpg
+    bio: Primary focus was understanding the optical emission produced by SMBHBs and how they can be detected in wide field time-domain surveys like ZTF and LSST. 

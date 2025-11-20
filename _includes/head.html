@@ -1,0 +1,19 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+<!-- Critical CSS (prevents both logos showing if main CSS hasn’t loaded yet) -->
+<style>
+  .dark-only{display:none}
+  .light-only{display:block}
+  html[data-theme="dark"] .dark-only{display:block}
+  html[data-theme="dark"] .light-only{display:none}
+  @media (prefers-color-scheme: dark){
+    .dark-only{display:block}
+    .light-only{display:none}
+  }
+</style>
+
+<link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+<script defer src="{{ '/assets/js/script.js' | relative_url }}"></script>
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}" />

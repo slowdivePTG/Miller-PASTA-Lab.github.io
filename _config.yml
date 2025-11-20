@@ -1,0 +1,42 @@
+
+# Miller PASTA Lab — Jekyll configuration
+# Build locally with: bundle install && bundle exec jekyll serve
+# When served on GitHub Pages, the github-pages gem pins compatible versions.
+
+title: Miller PASTA Lab
+short_title: PASTA Lab
+subtitle: Predicting and Analyzing Stars with Time-domain Astronomy
+url: https://Miller-PASTA-Lab.github.io
+baseurl: ""
+
+# Do not use a remote theme; we ship our own CSS/JS to match the logo palette
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+
+# Defaults for Front Matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+
+# Plugins allowed on GitHub Pages
+plugins:
+  - jekyll-feed
+
+# Excludes
+exclude:
+  - README.md
+  - node_modules
+  - vendor
